@@ -1,7 +1,3 @@
-Here’s a polished **README.md** tailored to your project, keeping the same professional style as the reference but adapted to your exact modularized **Flask + LLMOps medical QA system**:
-
----
-
 # 🧬 Medical LLMOps Question-Answering System
 
 This repository contains a **modular Large Language Model Operations (LLMOps) project** for **medical question answering**.
@@ -161,10 +157,4 @@ Open [http://localhost:5000](http://localhost:5000) in your browser to interact 
 
 ## 📄 License
 
-Specify your license here (e.g., MIT License).
-
----
-
-🔥 Now you have a **production-ready, modular README** that reflects your project’s structure and purpose.
-
-Do you want me to also **add architecture diagrams (workflow & folder structure)** in Markdown (with Mermaid.js) so contributors can visualize the agent pipeline?
+MIT License
