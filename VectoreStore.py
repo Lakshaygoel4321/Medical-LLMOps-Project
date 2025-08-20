@@ -35,15 +35,15 @@ vectore_store = Cassandra(
 
 # loading the data
 
-pdf = PyPDFDirectoryLoader(path = r"C:\Users\iamda\OneDrive\Desktop\Gen ai\LLMOpS\Part-2\Medical-LLMOps-Project\Data")
-loader = pdf.load()
+# pdf = PyPDFDirectoryLoader(path = r"C:\Users\iamda\OneDrive\Desktop\Gen ai\LLMOpS\Part-2\Medical-LLMOps-Project\Data")
+# loader = pdf.load()
 
-# splitting the data
-spliter = RecursiveCharacterTextSplitter(chunk_size=15000,chunk_overlap=200)
-docs = spliter.split_documents(loader)
+# # splitting the data
+# spliter = RecursiveCharacterTextSplitter(chunk_size=15000,chunk_overlap=200)
+# docs = spliter.split_documents(loader)
 
-# store the data in vectore store database
-vectore_store.add_documents(docs)
+# # store the data in vectore store database
+# vectore_store.add_documents(docs)
 
 vectore_index = VectorStoreIndexWrapper(vectorstore = vectore_store)
 

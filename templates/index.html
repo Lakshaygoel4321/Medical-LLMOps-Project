@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Medical LLMOps QA</title>
+    <style>
+  /* Base reset */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafc;
+    margin: 2rem auto;
+    max-width: 720px;
+    padding: 1rem 2rem;
+    color: #2c3e50;
+  }
+
+  h1 {
+    color: #1a73e8;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+    text-align: center;
+  }
+
+  p {
+    color: #555759;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  textarea {
+    font-family: inherit;
+    font-size: 1.1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid #ccd6dd;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.3s ease;
+  }
+
+  textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.3);
+  }
+
+  button {
+    align-self: flex-end;
+    background-color: #1a73e8;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: #1669c1;
+    outline: none;
+  }
+
+  h2 {
+    border-bottom: 2px solid #e1e4eb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+  }
+
+  .chat-entry {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1.25rem;
+    border-left: 5px solid #1a73e8;
+  }
+
+  .user {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.4em;
+  }
+
+  .assistant {
+    font-weight: 500;
+    color: #34495e;
+    white-space: pre-line; /* preserves line breaks nicely */
+    line-height: 1.4;
+  }
+
+  .info {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #627d98;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    body {
+      padding: 1rem;
+      margin: 1rem;
+    }
+
+    button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+    <h1>🧬 Medical Assistant LLMOps Demo</h1>
+    <p>Ask any medical question and get validated, professional answers via the LLMOps agent stack.</p>
+    
+    <form method="POST" action="/">
+        <textarea name="question" placeholder="Enter your medical question here..." required></textarea><br />
+        <button type="submit">Get Answer</button>
+    </form>
+
+    {% if chat_history %}
+        <h2>Conversation History</h2>
+        {% for entry in chat_history|reverse %}
+            <div class="chat-entry">
+                <div class="user">You: {{ entry.user }}</div>
+                <div class="assistant">Assistant: {{ entry.assistant }}</div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="info">
+        Tip: This demo supports only medical / healthcare questions.
+    </div>
+</body>
+</html>
