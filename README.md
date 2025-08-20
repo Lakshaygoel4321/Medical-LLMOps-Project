@@ -1,4 +1,3 @@
-```markdown
 # Medical LLMOps Question-Answering System
 
 This repository contains a full-stack **Large Language Model Operations (LLMOps)** project designed for medical question answering. It integrates modular AI agents for classification, retrieval, content writing, validation, web search, and summarization into an orchestrated workflow. The backend is built with Python and LangChain-based agents, and a user-friendly frontend is implemented using Flask with a modern responsive UI.
@@ -13,7 +12,6 @@ This system allows users to ask medical and healthcare-related questions and rec
 
 ## 🗂 Folder Structure
 
-```
 llmops_medical_project/
 │
 ├── agents/                 # All agent modules implementing workflow steps
